@@ -156,6 +156,8 @@ button:hover{
 
 <div class="container">
 
+<form id="formDenuncia">
+
 <div class="header">
     <h1>Canal de Denúncias Embraterr</h1>
 
@@ -244,8 +246,6 @@ button:hover{
 
 </div>
         
-    </select>
-</div>
 
 <div class="card">
     <h2>Em qual unidade ocorreu a situação?</h2>
@@ -350,8 +350,7 @@ placeholder="Relate detalhadamente o ocorrido, envolvidos, datas, horários, evi
     </div>
 </div>
 
-<button onclick="enviarDenuncia()">
-    Enviar denúncia
+<button type="button" onclick="enviarDenuncia()">    Enviar denúncia
 </button>
 
 <div class="status" id="status"></div>
@@ -359,7 +358,7 @@ placeholder="Relate detalhadamente o ocorrido, envolvidos, datas, horários, evi
 <div class="footer">
     Canal seguro e confidencial.
 </div>
-
+</form>
 </div>
 
 <script>
@@ -460,7 +459,11 @@ ${document.getElementById("testemunhas").value || "Não informado"}
 
         status.innerHTML = "✅ Denúncia enviada com sucesso.";
 
-        document.querySelector("form")?.reset();
+ 		// LIMPA O FORMULÁRIO
+       
+	 document.getElementById("formDenuncia").reset();
+
+	// document.querySelector("form")?.reset();
 
         window.scrollTo({
             top:0,
